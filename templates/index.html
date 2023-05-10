@@ -5,9 +5,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
       <!-- Nav tabs -->
@@ -55,8 +56,20 @@
     <h1> {{nombre}} </h1>
     <ul>
     {%for nombre in nombres%}
-        <l1>{{nombre}} </li>
+        <li>{{nombre}} </li>
         {% endfor %}
     </ul>
+    {%if numero < 10%}
+      <p>Numero es menor a 10 porque es {{numero}}</p>
+    {%else%}
+    <div id="p">
+    <p>ES MAYOR A 10</p>
+    </div>
+    {% endif %}
+    <li>{{dicc.provincia}}</li>
+    {%for localidad in dicc.localidades%}
+      <li>{{localidad.nombre}}</li>
+      {%endfor%}
+    <p>{{dicc}} </p>
     </body>
 </html>

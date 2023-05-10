@@ -6,17 +6,19 @@ app = Flask(__name__) #declaramos una app flask __name__ es app.py
 def hello_world():
     nombre_apellido = "Emanuel Diaz"
     lista = ["carlos","pepe","raul"]
-    return render_template("index.html",nombre = nombre_apellido, nombres= lista)
+    numeros = 7
+    diccionario = {"provincia":"cordoba","localidades":[{"nombre":"Rio Cuarto"},{"nombre":"ucacha"}]}
+    return render_template("index.html",nombre = nombre_apellido, nombres= lista, numero = numeros, dicc = diccionario )
 
 """@app.route("/bienvenido")#todo lo que se escriba despues de la barra sera una variable
 def welcome():
     return "<h2>PRIMERA APIIIIIIII VENTANA DE INICIO</h2>"
 
-@app.route("/bienvenido/<nombre>")
+@app.route("/bienvenido/<nombre>") 
 def welcome_name(nombre):
     return f"<h2>BIENVENIDO {nombre} </h2>"
 
-@app.route("/suma/<a>/<b>")
+@app.route("/suma/<a>/<b>") 
 def suma(a,b):
     try:
         result = int(a) + int(b)
